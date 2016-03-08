@@ -21,8 +21,8 @@ requires = [
     ]
 
 setup(name='starter',
-      version='0.0',
-      description='starter',
+      version='0.1',
+      description='Pyramid Starter Scaffold',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
@@ -30,8 +30,8 @@ setup(name='starter',
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         ],
-      author='',
-      author_email='',
+      author='Bruce C. Paul',
+      author_email='bruce.c.paul@gmail.com',
       url='',
       keywords='web wsgi bfg pylons pyramid',
       packages=find_packages(),
