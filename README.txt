@@ -3,7 +3,7 @@ starter README
 v0.1
 
 A Pyramid scaffold to start my projects from.  Includes Jinja2 and SQLAlchemy,
-along with WTForms.  
+along with WTForms.  Based on the Python3 Pyramid 'alchemy' Scaffold.
 
 Getting Started
 ---------------
