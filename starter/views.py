@@ -1,5 +1,8 @@
 from pyramid.response import Response
-from pyramid.view import view_config
+from pyramid.view import (
+    view_config,
+    view_defaults
+    )
 
 from sqlalchemy.exc import DBAPIError
 
@@ -7,13 +10,28 @@ from .models.meta import DBSession
 from .models import User
 
 
+@view_defaults(renderer='templates/howdy.jinja2')
+class HowdyViews:
+    def __init__(self, request):
+        self.request = request
+
+    @view_config(route_name='howdy')
+    def howdy(self):
+        first = self.request.matchdict['first']
+        last = self.request.matchdict['last']
+        return {
+            'page': 'Howdy View',
+            'first': first,
+            'last': last
+        }
+
 @view_config(route_name='home', renderer='templates/home.jinja2')
 def my_view(request):
     try:
         dave = DBSession.query(User).filter(User.name == 'dave').first()
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'user': dave.name, 'scaffold': 'Jinja2-Alchemy Starter'}
+    return {'user': dave.name, 'page': 'Basic View'}
 
 
 conn_err_msg = """\

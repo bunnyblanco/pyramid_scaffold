@@ -28,7 +28,7 @@ class TestMyViewSuccessCondition(unittest.TestCase):
         request = testing.DummyRequest()
         info = my_view(request)
         self.assertEqual(info['user'], 'dave')
-        self.assertEqual(info['scaffold'], 'Jinja2-Alchemy Starter')
+        self.assertEqual(info['page'], 'Basic View')
 
 
 class TestMyViewFailureCondition(unittest.TestCase):
