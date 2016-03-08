@@ -1,5 +1,5 @@
-starter README
-==================
+Pyramid SQLAlchemy with Jinja2 Scaffold
+=======================================
 v0.1
 
 A Pyramid scaffold to start my projects from.  Includes Jinja2 and SQLAlchemy,
